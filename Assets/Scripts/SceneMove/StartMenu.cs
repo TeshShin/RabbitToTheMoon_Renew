@@ -21,6 +21,6 @@ public class StartMenu : MonoBehaviour
 
 	private void StartGame()
 	{
-		SceneManager.LoadScene("SampleScene");
+		SceneManager.LoadScene("1. HelloRabbitScene");
 	}
 }
