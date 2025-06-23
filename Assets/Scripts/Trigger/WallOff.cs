@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class WallOff : MonoBehaviour
 {
-	public bool ishuntered;
 
-	void Update()
+    private void Start()
     {
-		ishuntered = GameObject.FindWithTag("Player").GetComponent<PlayerController>().isHuntered;
-		if (ishuntered)
-		{
-			gameObject.SetActive(false);
-		}
+        if (PlayerController.Inst.GetIsHuntered())
+        {
+            Destroy(gameObject);
+        }
     }
 }

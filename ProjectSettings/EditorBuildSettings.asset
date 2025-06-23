@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2. HunterScene.unity
     guid: 2920feadfb193db43bfe5c2bbb3e9438
+  - enabled: 1
+    path: Assets/Scenes/3. RabbitScene.unity
+    guid: 1e361e2f7b590fa42b7a25a4fc353c29
+  - enabled: 1
+    path: Assets/Scenes/4. LakeScene.unity
+    guid: 124cc7afac8cfdf46a9ef037cdd43e1f
+  - enabled: 1
+    path: Assets/Scenes/5. AnimationScene.unity
+    guid: ec54e23eaadad604f969b96f393c9407
+  - enabled: 1
+    path: Assets/Scenes/6. StartMiniScene.unity
+    guid: 037d393e9001b72449842c68f653a11a
   m_configObjects: {}

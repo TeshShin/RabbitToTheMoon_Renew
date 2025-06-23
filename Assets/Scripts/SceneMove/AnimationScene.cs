@@ -5,19 +5,13 @@ using UnityEngine;
 
 public class AnimationScene : MonoBehaviour
 {
-	public AudioSource Peace;
-
-	void Start()
-	{
-		Peace = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
-	}
-
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (Peace.isPlaying)
+		if (PlayerController.Inst.GetAudioSource().isPlaying)
 		{
-			Peace.Stop();
+            PlayerController.Inst.GetAudioSource().Stop();
 		}
-		SceneManager.LoadScene("AnimationScene");
+		Destroy(PlayerController.Inst.gameObject);
+		SceneManager.LoadScene("5. AnimationScene");
 	}	
 }

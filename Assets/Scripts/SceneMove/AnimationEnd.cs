@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class AnimationEnd : MonoBehaviour
 {
+	private VideoPlayer video;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-		Invoke("EndAnimation", 18.0f);
+		video = GetComponent<VideoPlayer>();
+        // 영상의 (루프 포인트) 끝에 도달했다면
+		video.loopPointReached += EndAnimation;
 	}
-	private void EndAnimation()
+    private void EndAnimation(VideoPlayer v)
 	{
-		SceneManager.LoadScene("ToTheMoon");
+		SceneManager.LoadScene("6. StartMiniScene");
 	}
 }

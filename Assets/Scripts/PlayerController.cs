@@ -23,9 +23,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 500f;
 	private Animator animator;
 	private Rigidbody2D body2d;
-
+	private AudioSource audioSource;
 	//Trigger Variable
-	public bool isHuntered = false; // TODO : private으로 바꾸고 Inst를 통해 참조함으로써 캡슐화
+	private bool isHuntered = false;
 	private bool isHi = false;
 	private bool startHunt = false;
 
@@ -46,13 +46,14 @@ public class PlayerController : MonoBehaviour
 
 		Instance = this;
 		DontDestroyOnLoad(gameObject);
-
+		
 	}
 
 	private void Start()
 	{
 		animator = GetComponent<Animator>();
 		body2d = GetComponent<Rigidbody2D>();
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
@@ -154,5 +155,9 @@ public class PlayerController : MonoBehaviour
     {
         startHunt = setBool;
     }
+	public AudioSource GetAudioSource()
+	{
+		return audioSource;
+	}
 }
 

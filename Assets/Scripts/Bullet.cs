@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-	public float speed = 8f;
-	private Rigidbody2D bulletRigidbody;
+	[SerializeField] private float speed = 8f;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-		bulletRigidbody = GetComponent<Rigidbody2D>();
-		//bulletRigidbody.velocity = transform.forward * speed;
-
 		Destroy(gameObject, 5f);
     }
 
@@ -25,7 +21,7 @@ public class Bullet : MonoBehaviour
 	{
 		if(other.tag == "Player")
 		{
-			other.transform.position = (new Vector3(1f, -1f, 0f));
+			other.transform.position = (new Vector3(5f, -2.15f, 0f));
 			Destroy(this.gameObject);
 		}
 	}

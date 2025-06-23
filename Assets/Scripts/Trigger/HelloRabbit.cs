@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HelloRabbit : MonoBehaviour
 {
-    private void Awake()
+    private void Start()
     {
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).gameObject.SetActive(false);
@@ -17,7 +17,7 @@ public class HelloRabbit : MonoBehaviour
     {
         // 말풍선 위치를 플레이어 머리 위로 설정
         transform.GetChild(0).gameObject.transform.position = new Vector3 (PlayerController.Inst.transform.position.x, PlayerController.Inst.transform.position.y + 2.5f, PlayerController.Inst.transform.position.z);
-        transform.GetChild(2).gameObject.transform.position = new Vector3(PlayerController.Inst.transform.position.x, PlayerController.Inst.transform.position.y + 2.5f, PlayerController.Inst.transform.position.z);
+        transform.GetChild(2).gameObject.transform.position = new Vector3 (PlayerController.Inst.transform.position.x, PlayerController.Inst.transform.position.y + 2.5f, PlayerController.Inst.transform.position.z);
     }
     private void OnTriggerEnter2D(Collider2D other)
 	{
