@@ -6,24 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/0. IntroScene.unity
+    path: Assets/1. Scenes/0. IntroScene.unity
     guid: 55119f4994613f14f94c14e3fded86a4
   - enabled: 1
-    path: Assets/Scenes/1. HelloRabbitScene.unity
+    path: Assets/1. Scenes/1. HelloRabbitScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/2. HunterScene.unity
+    path: Assets/1. Scenes/2. HunterScene.unity
     guid: 2920feadfb193db43bfe5c2bbb3e9438
   - enabled: 1
-    path: Assets/Scenes/3. RabbitScene.unity
+    path: Assets/1. Scenes/3. RabbitScene.unity
     guid: 1e361e2f7b590fa42b7a25a4fc353c29
   - enabled: 1
-    path: Assets/Scenes/4. LakeScene.unity
+    path: Assets/1. Scenes/4. LakeScene.unity
     guid: 124cc7afac8cfdf46a9ef037cdd43e1f
   - enabled: 1
-    path: Assets/Scenes/5. AnimationScene.unity
+    path: Assets/1. Scenes/5. AnimationScene.unity
     guid: ec54e23eaadad604f969b96f393c9407
   - enabled: 1
-    path: Assets/Scenes/6. StartMiniScene.unity
+    path: Assets/1. Scenes/6. StartLastScene.unity
     guid: 037d393e9001b72449842c68f653a11a
+  - enabled: 1
+    path: Assets/1. Scenes/7. LastGameScene.unity
+    guid: d645575523aebd04c964fd54ebcede9f
+  - enabled: 1
+    path: Assets/1. Scenes/8. EndingScene.unity
+    guid: 78e741825ae1a6e4a9e79a29b2efd635
   m_configObjects: {}

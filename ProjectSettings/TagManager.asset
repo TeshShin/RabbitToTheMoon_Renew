@@ -5,13 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
-  - Tile
-  - Item1
-  - Item2
-  - Item3
-  - Item4
-  - Item5
   - Trigger
+  - DeadZone
+  - Platform
+  - Item
   layers:
   - Default
   - TransparentFX
