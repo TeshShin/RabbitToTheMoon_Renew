@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    public enum PlatformType { Normal, Moving, SuperJump }
+    public enum PlatformType { Normal, Moving, SuperJump, MovingSuperJump }
 
     [SerializeField] private PlatformType platformType = PlatformType.Normal;
 
@@ -38,7 +38,7 @@ public class Platform : MonoBehaviour
     }
     private void Update()
     {
-        if (platformType == PlatformType.Moving)
+        if (platformType == PlatformType.Moving || platformType == PlatformType.MovingSuperJump)
         {
             MovePlatform();
         }
@@ -76,6 +76,7 @@ public class Platform : MonoBehaviour
                 jumpsound.clip = jumpClip;
                 break;
             case PlatformType.SuperJump:
+            case PlatformType.MovingSuperJump:
                 spriteRenderer.sprite = superJumpSprite;
                 jumpsound.clip = superJumpClip;
                 break;
@@ -92,7 +93,7 @@ public class Platform : MonoBehaviour
             if (rb != null)
             {
                 // 발판 타입에 따른 점프 세기
-                float force = (platformType == PlatformType.SuperJump) ? superJumpForce : jumpForce;
+                float force = (platformType == PlatformType.SuperJump || platformType == PlatformType.MovingSuperJump) ? superJumpForce : jumpForce;
                 rb.velocity = new Vector2(rb.velocity.x, force);
             }
         }

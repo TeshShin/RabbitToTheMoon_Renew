@@ -93,13 +93,32 @@ public class PlatformPoolManager : MonoBehaviour
         if (p == null) return;
 
         float rand = Random.value;
-        
-        if (rand < 0.7f) // 70%
-            p.SetType(Platform.PlatformType.Normal);
-        else if (rand < 0.9f) // 20%
-            p.SetType(Platform.PlatformType.Moving);
+        float moving = Random.value;
+        if (rand < 0.9f) // 90%
+        {
+            if(moving < 0.6f) // 60%
+            {
+                p.SetType(Platform.PlatformType.Normal); // 노말 타일
+            }
+            else // 40%
+            {
+                p.SetType(Platform.PlatformType.Moving); // 움직이는 노말 타일
+            }
+
+        }
         else // 10%
-            p.SetType(Platform.PlatformType.SuperJump);
+        {
+            if (moving < 0.6f)
+            {
+                p.SetType(Platform.PlatformType.SuperJump); // 슈퍼 점프 타일
+            }
+            else
+            {
+                p.SetType(Platform.PlatformType.MovingSuperJump); // 움직이는 슈퍼 점프 타일
+            }
+            
+        }
+            
     }
 
     /// <summary>
@@ -151,7 +170,7 @@ public class PlatformPoolManager : MonoBehaviour
     /// 아이템이 획득됐는지 확인합니다.
     /// </summary>
     /// <param name="itemId">수집한 아이템의 고유 ID (0~4)</param>
-    /// <returns></returns>
+    /// <returns>획득된 아이템인지</returns>
     public bool IsItemCollected(int itemId)
     {
         return collectedItemIds.Contains(itemId);
@@ -159,7 +178,7 @@ public class PlatformPoolManager : MonoBehaviour
     /// <summary>
     /// 획득되지 않은 아이템의 리스트를 얻습니다.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>획득되지 않은 아이템 리스트</returns>
     public List<int> GetUncollectedItemIds()
     {
         List<int> uncollected = new List<int>();
