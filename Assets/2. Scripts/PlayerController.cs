@@ -121,10 +121,6 @@ public class PlayerController : MonoBehaviour
 	{
 		isHi = setBool;
 	}
-	public Transform GetTransform()
-	{
-		return gameObject.transform;
-	}
 	public void SetTransform(Vector3 vec)
 	{
 		transform.position = vec;
