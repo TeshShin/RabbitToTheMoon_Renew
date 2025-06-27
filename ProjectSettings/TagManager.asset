@@ -9,18 +9,20 @@ TagManager:
   - DeadZone
   - Platform
   - Item
+  - SuperPlatform
+  - ItemCollector
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Item
+  - Wall
   - ground
-  - 
-  - 
+  - ItemCollector
+  - DeadZone
   - 
   - 
   - 

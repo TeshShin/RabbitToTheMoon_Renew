@@ -19,7 +19,8 @@ public class PlatformPoolManager : MonoBehaviour
 
     private float levelWidth = 8f;
     private float minY = 1f;
-    private float maxY = 2.8f;
+    // 플레이어가 밟을 수 있는 현재 일반 발판과 다음 일반 발판의 최대 차이는 약 3.5362 이다.
+    private float maxY = 3.5f;
 
 	private List<GameObject> platformPool;
 	private float highestY = 0f;

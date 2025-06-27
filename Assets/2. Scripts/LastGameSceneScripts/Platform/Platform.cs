@@ -8,10 +8,6 @@ public class Platform : MonoBehaviour
 
     [SerializeField] private PlatformType platformType = PlatformType.Normal;
 
-    [Header("점프 세기")]
-    [SerializeField] private float jumpForce = 10f;
-    [SerializeField] private float superJumpForce = 20f;
-
     [Header("이동 속도")]
     [SerializeField] private float moveSpeed = 2.5f;
     [SerializeField] private float moveRange = 8f;
@@ -74,28 +70,14 @@ public class Platform : MonoBehaviour
             case PlatformType.Moving:
                 spriteRenderer.sprite = normalSprite;
                 jumpsound.clip = jumpClip;
+                gameObject.tag = "Platform";
                 break;
             case PlatformType.SuperJump:
             case PlatformType.MovingSuperJump:
                 spriteRenderer.sprite = superJumpSprite;
                 jumpsound.clip = superJumpClip;
+                gameObject.tag = "SuperPlatform";
                 break;
-        }
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player" && collision.relativeVelocity.y <= 0f)
-        {
-			jumpsound.Play();
-            ToTheMoonPlayer.Inst.SetGrounded(true);
-            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                // 발판 타입에 따른 점프 세기
-                float force = (platformType == PlatformType.SuperJump || platformType == PlatformType.MovingSuperJump) ? superJumpForce : jumpForce;
-                rb.velocity = new Vector2(rb.velocity.x, force);
-            }
         }
     }
 }

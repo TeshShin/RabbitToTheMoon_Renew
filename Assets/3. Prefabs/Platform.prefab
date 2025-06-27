@@ -145,7 +145,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 90
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -162,8 +162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformType: 0
-  jumpForce: 10
-  superJumpForce: 20
   moveSpeed: 2
   moveRange: 8
   normalSprite: {fileID: 21300000, guid: ada01232f66502847a4e14a00a099a8b, type: 3}
