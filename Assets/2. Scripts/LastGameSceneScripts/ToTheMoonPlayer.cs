@@ -20,7 +20,7 @@ public class ToTheMoonPlayer : MonoBehaviour
     [Header("게임 오버 UI")]
     [SerializeField] private GameObject gameOver; // 게임 오버 캔버스
     [Header("플레이어 이동속도 세팅")]
-    [SerializeField] private float movementSpeed = 15f;
+    [SerializeField] private float movementSpeed = 20f;
     [Header("점프 세기")]
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float superJumpForce = 20f;
