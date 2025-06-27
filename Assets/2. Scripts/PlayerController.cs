@@ -22,11 +22,11 @@ public class PlayerController : MonoBehaviour
 	private Animator animator;
 	private Rigidbody2D body2d;
 	private AudioSource audioSource;
-	//Trigger Variable
+	// Trigger Variable
 	private bool isHuntered = false;
 	private bool isHi = false;
 	private bool startHunt = false;
-
+	// 애니메이션을 위한 변수들
 	private bool isGrounded = false;
 	private bool isFalling = false;
 
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 		}
 		else if (Input.GetButtonUp("Jump") && body2d.velocity.y > 0)
 		{
-			// 마우스 왼쪽 버튼에서 손을 떼는 순간 && 속도의 y값이 양수라면(위로 상승 중)
+			// 점프 키에서 손을 떼는 순간 && 속도의 y값이 양수라면(위로 상승 중)
 			// 현재 속도를 절반으로 변경
 			body2d.velocity = body2d.velocity * 0.5f;
 		}
@@ -76,10 +76,9 @@ public class PlayerController : MonoBehaviour
 		animator.SetBool("Grounded", isGrounded);
 		animator.SetBool("Falling", isFalling);
 
-
 		float inputX = Input.GetAxisRaw("Horizontal");
 		float xSpeed = inputX * speed;
-		//Appearance matching to moving direction
+		// 움직이는 방향에 알맞게 플레이어 뒤집기
 		if (inputX < 0)
 		{
 			transform.localScale = new Vector3(1.3f, 1.3f, 1.0f);
@@ -93,11 +92,7 @@ public class PlayerController : MonoBehaviour
 		{
 			xSpeed = xSpeed * 2.5f;
 		}
-
-
 		body2d.velocity = new Vector2(xSpeed, body2d.velocity.y);
-
-
 		animator.SetFloat("Speed", xSpeed);
 	}
 	private void OnCollisionEnter2D(Collision2D collision)

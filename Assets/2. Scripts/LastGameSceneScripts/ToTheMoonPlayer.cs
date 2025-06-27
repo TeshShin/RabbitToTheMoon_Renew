@@ -89,7 +89,7 @@ public class ToTheMoonPlayer : MonoBehaviour
     /// <param name="collision">Platform(발판)</param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 8 && collision.contacts[0].normal.y > 0.5f)
+        if(collision.gameObject.layer == 8 && collision.contacts[0].normal.y > 0.7f)
         {
             if (collision.gameObject.tag == "Platform")
             {
