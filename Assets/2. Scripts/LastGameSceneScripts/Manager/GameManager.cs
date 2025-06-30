@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
         }
     }
     private bool isGameover = false;
-
+    // æ∆¿Ã≈€ UI
     [SerializeField] private GameObject[] Items;
     private void Awake()
     {
